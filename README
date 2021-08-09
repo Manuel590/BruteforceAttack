@@ -1,0 +1,36 @@
+########################################################################
+
+This tool was created by Manuel Dos Santos a long life technology enthusiast for the purpose of legally permitted Web Application Penetration testing. However, this tool works in the following manner:
+inside of your cmd call the tool in the following way according to which folder you've saved the tool on, otherwise you'll have to cd to the specific folder:
+
+-$ python3 Bruteforce.py
+
+Once you start using the tool, it will ask for the following:
+* Enter the site URL;
+* Enter the username;
+* name of the password file(txt);
+* The string the web page says once you try to unsuccessfully login e.g. Failed Login.
+* Cookie value(Optional, if the web page has no session)
+
+Once you perform the action above, the tool will try to login with the possible passwords inserted on the passwords.txt file found on the same folder. Make sure you to input the possible passwords inside of that file
+or you can use your own file. Lastly, the tool will generate the password and username that worked on the webpage login form. 
+
+In addition, this will only work if you have the correct field names e.g. username and password. To bruteforce webpages that have login sessions e.g. you will need the cookie value of the webpage, you can get the cookie by using the Burpsuite tool to intercept packets. 
+To find the cookie value you can do the following:
+- Open the your Burpsuite on your Machine
+- Go to target tab
+- Click on your http ip address found on the target tab for example http://192.168.0.0
+- Then look for the last intercepion your Burpsuite has made. Read the information provided and you will find the Cookie value. 
+
+
+Changes that you may need to accomodate when using the tool are:
+# Understand whether the form method is either POST or GET. To view it you can view the source code by clicking F12(default for web browsers)
+# Then make a few changes on the function called 'Cracking', whereby response = resuqests.get()/post on the cookie 'if statement' inside of the Bruteforce.py file as you see fit.
+
+To summarize, the tool will work properly as longer as you enter the correct field values shown by the source code of the webpage and form method stated above(POST or GET). Feel Free to make any changes to suit your needs.
+
+
+
+
+Take care and please do not use this tool for malicious or unathurised purposes.
+###################################################################################      
